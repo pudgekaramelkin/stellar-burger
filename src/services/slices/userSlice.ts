@@ -62,19 +62,16 @@ export const logoutUserThunk = createAsyncThunk('users/logoutUser', async () =>
   })
 );
 
-export const getUserThunk = createAsyncThunk('users/getUser', async () =>
-  getUserApi()
-);
+export const getUserThunk = createAsyncThunk('users/getUser', getUserApi);
 
 export const updateUserThunk = createAsyncThunk(
   'users/updateUser',
-  async ({ email, name, password }: Partial<TRegisterData>) =>
-    updateUserApi({ email, name, password })
+  updateUserApi
 );
 
 export const getOrdersThunk = createAsyncThunk(
   'users/getUserOrders',
-  async () => getOrdersApi()
+  getOrdersApi
 );
 
 const userSlice = createSlice({

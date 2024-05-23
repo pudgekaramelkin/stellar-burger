@@ -28,7 +28,7 @@ export const BurgerConstructor: FC = () => {
 
   const onOrderClick = () => {
     if (!isAuthenticated) {
-      navigate('/login');
+      return navigate('/login');
     }
 
     const { bun, ingredients } = constructorItems;
